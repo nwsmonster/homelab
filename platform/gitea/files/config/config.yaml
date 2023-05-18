@@ -18,4 +18,4 @@ repositories:
     migrate:
       source: https://github.com/nwsmonster/homelab
       mirror: false
-    hook: true
+    hook: false
