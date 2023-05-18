@@ -49,7 +49,7 @@ func main() {
 	gitea_host := os.Getenv("GITEA_HOST")
 	gitea_user := os.Getenv("GITEA_USER")
 	gitea_password := os.Getenv("GITEA_PASSWORD")
-	// webhook_token := os.Getenv("WEBHOOK_TOKEN")
+	webhook_token := "secret"
 
 	log.Printf("Hello")
 
