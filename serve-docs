@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+args=()
+
+MKDOCS_ADDR=${MKDOCS_ADDR-localhost}
+MKDOCS_PORT=${MKDOCS_PORT-8000}
+
+has_dev_addr=0
+for arg in "$@"; do
+  if [ "$arg" = "-a" ] || [ "$arg" = "--dev-addr" ]; then
+    has_dev_addr=1
+    args+=("$arg")
+  else
+    args+=("$arg")
+  fi
+done
+if [ $has_dev_addr -eq 0 ]; then
+  args+=("--dev-addr")
+  args+=("$MKDOCS_ADDR:$MKDOCS_PORT")
+fi
+
+mkdocs serve "${args[@]}"

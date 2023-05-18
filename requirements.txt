@@ -1,0 +1,6 @@
+mkdocs-material
+mkdocs-material-extensions
+ansible
+ansible-lint
+yamllint
+rich

@@ -1,0 +1,3 @@
+This repo was based on [khuedoan/homelab](https://github.com/khuedoan/homelab) which is licensed with [GPLv3](https://raw.githubusercontent.com/khuedoan/homelab/master/LICENSE.md).
+---
+The k3s directory was based on [k3s-io/k3s-ansible](https://github.com/k3s-io/k3s-ansible), which was authored by [itwars](https://github.com/itwars) and is licensed with [APACHE LICENSE, VERSION 2.0](https://raw.githubusercontent.com/k3s-io/k3s-ansible/master/LICENSE).

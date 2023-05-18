@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "davidanson.vscode-markdownlint",
+    "foxundermoon.shell-format",
+    "timonwong.shellcheck",
+    "redhat.vscode-yaml",
+    "ms-vscode.makefile-tools",
+    "tumido.cron-explained",
+    "hogashi.crontab-syntax-highlight",
+    "wholroyd.jinja",
+    "redhat.ansible",
+    "hashicorp.terraform",
+    "rust-lang.rust-analyzer",
+    "dakara.transformer"
+  ]
+}

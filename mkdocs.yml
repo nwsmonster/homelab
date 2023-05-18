@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: Nick's Homelab
+copyright: Copyright &copy; 2023 Nick Halase
+repo_url: https://github.com/nwsmonster/homelab
+
+theme:
+  name: material
+  palette:
+    primary: black
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - search.highlight
+    - search.share
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.snippets:
+      check_paths: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Reference:
+    - reference/index.md
+    - Architecture:
+      - reference/architecture/index.md
+      - reference/architecture/decision-records.md
