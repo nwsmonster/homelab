@@ -10,5 +10,5 @@ spec:
       name: letsencrypt-prod
     solvers:
       - http01:
-        ingress:
-          class: traefik
+          ingress:
+            class: traefik
