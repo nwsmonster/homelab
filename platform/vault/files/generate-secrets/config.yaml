@@ -1,0 +1,6 @@
+# Gitea
+- path: gitea/admin
+  data:
+    - key: password
+      length: 32
+      special: true

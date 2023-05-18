@@ -1,0 +1,8 @@
+gitops:
+  repo: https://github.com/nwsmonster/homelab
+  revision: main
+stacks:
+  - name: bootstrap
+    namespace: argocd # Override default value
+  - name: system
+  - name: platform

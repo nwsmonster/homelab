@@ -20,8 +20,14 @@ argo-cd:
     ingress:
       enabled: true
       ingressClassName: traefik
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
       hosts:
-        - argocd.nws.monster
+        - &host argocd.nws.monster
+      tls:
+        - secretName: argocd-tls-certificate
+          hosts:
+            - *host
     metrics: &metrics
       enabled: false
       serviceMonitor:
