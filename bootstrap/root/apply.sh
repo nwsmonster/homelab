@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VALUES="Values.yaml"
+VALUES="values.yaml"
 
 kubectl get ingress gitea --namespace gitea || true
 
