@@ -4,3 +4,6 @@ ansible
 ansible-lint
 yamllint
 rich
+kubernetes
+netaddr
+jinja2

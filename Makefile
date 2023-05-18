@@ -2,7 +2,7 @@
 .PHONY: *
 .EXPORT_ALL_VARIABLES:
 
-default: bootstrap
+default: bootstrap post-install
 
 python-deps:
 	@./scripts/check-binary.sh python
@@ -21,6 +21,9 @@ k3s:
 
 bootstrap:
 	make -C bootstrap
+
+post-install:
+	@./scripts/hacks.py
 
 delete-argocd:
 	kubectl delete namespace argocd
