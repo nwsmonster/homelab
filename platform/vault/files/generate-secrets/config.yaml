@@ -5,6 +5,13 @@
       length: 32
       special: true
 
+# Dex
+- path: dex/grafana
+  data:
+    - key: client_secret
+      length: 32
+      special: false
+
 # Tekton
 - path: tekton/webhook
   data:
