@@ -2,7 +2,7 @@
 .PHONY: *
 .EXPORT_ALL_VARIABLES:
 
-default: bootstrap post-install
+default: bootstrap
 
 python-deps:
 	@./scripts/check-binary.sh python
@@ -19,17 +19,26 @@ clean:
 k3s:
 	make -C k3s
 
+reset-k3s:
+	make -C k3s reset
+
 bootstrap:
 	make -C bootstrap
 
+bootstrap-argocd:
+	make -C bootstrap argocd
+
+bootstrap-argocd-root:
+	make -C bootstrap root
+
 post-install:
-	@./scripts/hacks.py
+	@./scripts/hacks.sh
 
 delete-argocd:
-	kubectl delete namespace argocd
-	kubectl delete crd applications.argoproj.io
-	kubectl delete crd applicationsets.argoproj.io
-	kubectl delete crd appprojects.argoproj.io
+	kubectl delete namespace argocd 2> /dev/null || true
+	kubectl delete crd applications.argoproj.io 2> /dev/null || true
+	kubectl delete crd applicationsets.argoproj.io 2> /dev/null || true
+	kubectl delete crd appprojects.argoproj.io 2> /dev/null || true
 
 whoami:
 	make -C experiments/whoami

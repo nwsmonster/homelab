@@ -2,8 +2,6 @@
 
 VALUES="values.yaml"
 
-kubectl get ingress gitea --namespace gitea || true
-
 helm template \
   --include-crds \
   --namespace argocd \
