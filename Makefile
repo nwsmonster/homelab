@@ -32,8 +32,7 @@ bootstrap-argocd-root:
 	make -C bootstrap root
 
 post-install:
-	@./scripts/hacks.sh
-	@./scripts/hacks
+	python3 ./scripts/hacks
 
 delete-argocd:
 	kubectl delete namespace argocd 2> /dev/null || true

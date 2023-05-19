@@ -49,8 +49,7 @@ func main() {
 	gitea_host := os.Getenv("GITEA_HOST")
 	gitea_user := os.Getenv("GITEA_USER")
 	gitea_password := os.Getenv("GITEA_PASSWORD")
-
-	log.Printf("Hello")
+	webhook_token := os.Getenv("WEBHOOK_TOKEN")
 
 	options := (gitea.SetBasicAuth(gitea_user, gitea_password))
 	client, err := gitea.NewClient(gitea_host, options)
@@ -102,7 +101,7 @@ func main() {
 						"url": "http://el-workflows-listener.tekton-workflows:8080",
 						"http_method": "post",
 						"content_type": "json",
-						"secret": "changeit",
+						"secret": webhook_token,
 					},
 					Events: []string{
 						"create",
