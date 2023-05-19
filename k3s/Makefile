@@ -8,10 +8,10 @@ default: site
 
 site:
 	ansible-playbook \
-		--inventory inventories/${env}.yml \
-		site.yml
+		--inventory inventories/${env}/hosts.ini \
+		site.yml -K
 
 reset:
 	ansible-playbook \
-		--inventory inventories/${env}.yml \
-		reset.yml
+		--inventory inventories/${env}/hosts.ini \
+		reset.yml -K
