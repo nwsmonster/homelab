@@ -1,21 +1,15 @@
-# TODO create user and access token
-# users:
-#   - name: renovate
-#     fullName: Renovate
-#     email: bot@renovateapp.com
-#     tokenSecretRef: renovate-secret # ???
 organizations:
   - name: ops
     description: Operations
     teams:
       - name: Owners
         members:
-          - renovate
+          - gitea_admin
 repositories:
   - name: homelab
     owner: ops
     private: false
     migrate:
       source: https://github.com/nwsmonster/homelab
-      mirror: false
+      mirror: true
     hook: false
