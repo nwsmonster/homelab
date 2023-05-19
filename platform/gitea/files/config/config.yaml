@@ -4,7 +4,7 @@ organizations:
     teams:
       - name: Owners
         members:
-          - gitea_admin
+          - renovate
 repositories:
   - name: homelab
     owner: ops
@@ -12,4 +12,4 @@ repositories:
     migrate:
       source: https://github.com/nwsmonster/homelab
       mirror: true
-    hook: false
+    hook: true

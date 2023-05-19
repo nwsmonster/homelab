@@ -1,0 +1,35 @@
+dex:
+  config:
+    issuer: https://dex.nws.monster
+    storage:
+      type: kubernetes
+      config:
+        inCluster: true
+    oauth2:
+      skipApprovalScreen: true
+    connectors:
+      - type: gitea
+        id: gitea
+        name: Gitea
+        config:
+          clientID: $GITEA_CLIENT_ID
+          clientSecret: $GITEA_CLIENT_SECRET
+          redirectURI: https://dex.nws.monster/callback
+          baseURL: https://git.nws.monster
+  envFrom:
+    - secretRef:
+        name: dex-secrets
+  ingress:
+    enabled: true
+    className: traefik
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+    hosts:
+      - host: &host dex.nws.monster
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - secretName: dex-tls-certificate
+        hosts:
+          - *host

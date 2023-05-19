@@ -2,7 +2,7 @@
 .PHONY: *
 .EXPORT_ALL_VARIABLES:
 
-default: bootstrap
+default: bootstrap post-install
 
 python-deps:
 	@./scripts/check-binary.sh python
@@ -33,6 +33,7 @@ bootstrap-argocd-root:
 
 post-install:
 	@./scripts/hacks.sh
+	@./scripts/hacks
 
 delete-argocd:
 	kubectl delete namespace argocd 2> /dev/null || true
