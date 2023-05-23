@@ -2,7 +2,7 @@
 .PHONY: *
 .EXPORT_ALL_VARIABLES:
 
-default: bootstrap post-install
+default: bootstrap
 
 python-deps:
 	@./scripts/check-binary.sh python

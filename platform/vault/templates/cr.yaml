@@ -69,8 +69,6 @@ spec:
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
-      hajimari.io/appName: Vault
-      hajimari.io/icon: database-lock
     spec:
       ingressClassName: traefik
       rules:
@@ -266,3 +264,17 @@ spec:
   resources:
     requests:
       storage: 1Gi
+
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: vault-file
+# spec:
+#   capacity:
+#     storage: 1Gi
+#   accessModes:
+#   - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Recycle
+#   hostPath:
+#     path: /vault/file

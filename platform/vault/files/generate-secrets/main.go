@@ -68,7 +68,7 @@ func main() {
 				log.Println("Secret written successfully.")
 			}
 		} else {
-			log.Println("Key abc in secret already existed.")
+			log.Printf("Key %s in secret already existed.\n", path)
 		}
 	}
 }
